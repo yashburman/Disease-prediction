@@ -17,7 +17,7 @@ def disease_prediction(input_data):
     input_data_reshaped = input_data.reshape(1,-1)
     prediction = loaded_model.predict(input_data_reshaped)
     disease = loaded_encoder.inverse_transform(prediction.reshape(1,-1))
-    return disease[0]
+    return disease[0][0]
 
 def about_section():
     st.markdown("## About Symptom Predictor")
